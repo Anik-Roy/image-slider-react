@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+.slider-container {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.slide {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    opacity: 0.2;
+    transform: scale(0.7);
+}
+.slide[data-active] {
+    opacity: 1;
+    z-index: 10;
+    /* transition-delay: 10000ms; */
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1);
+    transition: 2000ms all ease-in-out;
+}
+.slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.left {
+    /* opacity: 0.2; */
+    /* top: 30%; */
+    z-index: 2;
+    transform: translateX(-50%);
+    transition: 2000ms all ease-in-out;
+    /* transition-delay: 0ms; */
+}
+.right {
+    /* opacity: 0.2; */
+    /* top: 30%; */
+    transform: translateX(50%);
+    transition: 2000ms all ease-in-out;
+}
+.carousel-button {
+    position: absolute;
+    background: none;
+    border: none;
+    z-index: 2;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.carousel-button:hover,
+.carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+}
+.carousel-button:focus {
+    outline: 1px solid black;
+}
+.carousel-button.prev {
+    left: 1rem;
+}
+.carousel-button.next {
+    right: 1rem;
+}
+/* body {
+    width: 100vw;
+    height: 100vh;
+    background: #151515;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .example-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .next,
+  .prev {
+    top: calc(50% - 20px);
+    position: absolute;
+    background: white;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 2;
   }
+  
+  .next {
+    right: 10px;
+  }
+  
+  .prev {
+    left: 10px;
+    transform: scale(-1);
+  }
+  
+  img {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .image-left {
+      transform: translateX(-50%);
+  }
+  .image-right {
+    transform: translateX(50%);
 }
+  .refresh {
+    padding: 10px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+   */
